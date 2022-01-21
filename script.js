@@ -128,7 +128,10 @@ function checkOddPairsSeparation(oddPairs, initNumArray) {
 
     for (let key of Object.keys(oddPairs)) {
         counter++;
-        if (initNumArray[ + key + 1] % 2 == 0 && counter < Object.keys(oddPairs).length) {
+        if (counter == 1) {
+            continue
+        }
+        if (initNumArray[ + key - 2] % 2 == 0 && counter <= Object.keys(oddPairs).length) {
             return true;
         }
     }
